@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+        <title>Canvas Test</title>
+    </head>
+    <body>
+        <div style="display: flex;justify-content: center;">
+                <canvas id="canvas" width="1000" height="600">
+
+                </canvas>
+        </div>
+    </body>
+    <script src="canvas.js"></script>
+    <script>
+        let canvasPanel=new CanvasPanel("canvas");
+        canvasPanel.addRender("Rect",(attribute,context)=>{
+            const {x,y,width,height,bgColor,opacity} =attribute;
+            //context.opacity(opacity)
+              context.fillRect(x,y,width,height,bgColor)
+        })
+
+
+        canvasPanel.addRender("Line",(attribute,context)=>{
+            const {x,y,width,height} =attribute;
+              context.line(x,y,x+width,y+height)
+        })
+
+
+
+        canvasPanel.addShape("Rect",{
+            x:0,
+            y:0,
+            width:320,
+            height:160,
+            bgColor:"green",
+            opacity:0.4
+        })
+
+        canvasPanel.addShape("Rect",{
+            x:144,
+            y:144,
+            width:320,
+            height:160,
+            bgColor:"red",
+            opacity:0.4
+        })
+        canvasPanel.addShape("Line",{
+            x:100,
+            y:100,
+            width:200,
+            height:150,
+            opacity:0.4
+        })
+        canvasPanel.setGridSize(32);
+        canvasPanel.setGridVisibility(true)
+        canvasPanel.renderAllShape();
+       // var c = document.getElementById("canvas");
+       
+    </script>
+</html>
