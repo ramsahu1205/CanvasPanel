@@ -2,6 +2,12 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
         <title>Canvas Test</title>
+        <style>
+            .e-resize {cursor: e-resize;}
+            .move {cursor: move;}
+            .default {cursor: default;}
+            .n-resize {cursor: n-resize;}
+        </style>
     </head>
     <body>
         <div style="display: flex;justify-content: center;">
@@ -17,6 +23,7 @@
             const {x,y,width,height,bgColor,opacity} =attribute;
             //context.opacity(opacity)
               context.fillRect(x,y,width,height,bgColor)
+              
         })
 
 
